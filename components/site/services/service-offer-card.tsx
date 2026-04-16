@@ -26,7 +26,7 @@ export function ServiceOfferCard({ offer }: ServiceOfferCardProps) {
   return (
     <Card className="border-border/70 bg-white shadow-none">
       <CardHeader className="space-y-3">
-        <p className="text-xs font-semibold tracking-[0.16em] text-accent uppercase">{offer.title}</p>
+        <p className="text-lg font-extrabold tracking-[0.04em] text-secondary md:text-xl">{offer.title}</p>
         <CardTitle className="text-2xl leading-tight text-primary md:text-3xl">{offer.headline}</CardTitle>
         <p className="text-sm leading-relaxed text-[var(--on-surface-variant)] md:text-base">{offer.description}</p>
       </CardHeader>

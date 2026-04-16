@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -19,19 +20,18 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
-    }
+    if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container-shell pt-3 md:pt-4">
-        <div className="rounded-2xl bg-white/85 px-4 py-3 shadow-[0_8px_30px_rgba(3,22,49,0.06)] backdrop-blur-xl md:px-6">
+        <div className="rounded-2xl bg-white/88 px-4 py-3 shadow-[0_8px_30px_rgba(3,22,49,0.06)] backdrop-blur-xl md:px-6">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-sm font-semibold tracking-tight text-primary md:text-base">
-              {siteConfig.name}
+            <Link href="/" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-primary md:text-base">
+              <Image src="/vector-logo.svg" alt="Vector Systems logo" width={30} height={30} className="size-6 md:size-7" priority />
+              <span>{siteConfig.name}</span>
             </Link>
 
             <nav className="hidden items-center gap-7 md:flex">

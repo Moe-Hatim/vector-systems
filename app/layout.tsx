@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="en" className={`${bodyFont.variable} ${headingFont.variable}`}>
       <body>
         <SiteHeader />
-        {children}
+        <div className="pt-[5.5rem] md:pt-[6rem]">{children}</div>
         <SiteFooter />
       </body>
     </html>
