@@ -1,6 +1,6 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import { Handshake, Landmark, Wallet } from "lucide-react";
-import { founderImage, founderNote, galleryImages, whyVector } from "@/lib/site-content";
+import { founderNote, galleryImages, whyVector } from "@/lib/site-content";
 
 const icons = [Handshake, Wallet, Landmark];
 
@@ -31,7 +31,7 @@ export function WhySection() {
             <p className="text-sm leading-relaxed italic text-[var(--on-surface-variant)]">&ldquo;{founderNote}&rdquo;</p>
             <div className="mt-4 flex items-center gap-3">
               <div className="relative size-11 overflow-hidden rounded-full">
-                <Image src={founderImage} alt="Founder of Vector Systems" fill sizes="44px" className="object-cover" />
+                <Image src="/founder.png" alt="Founder of Vector Systems" fill sizes="44px" className="object-cover" />
               </div>
               <div>
                 <p className="text-sm font-semibold text-primary">Founder, Vector Systems</p>
@@ -63,4 +63,3 @@ export function WhySection() {
     </section>
   );
 }
-

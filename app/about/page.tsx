@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/site/page-hero";
@@ -12,10 +13,7 @@ export const metadata: Metadata = {
   description: "Learn how Vector Systems helps SMEs in Rwanda build practical operating systems.",
 };
 
-const aboutValues = [
-  { title: "Privacy & Security" },
-  ...whyVector,
-] as const;
+const aboutValues = [{ title: "Privacy & Security" }, ...whyVector] as const;
 
 export default function AboutPage() {
   return (
@@ -46,14 +44,15 @@ export default function AboutPage() {
         </div>
       </SectionShell>
 
-      <SectionShell
-        title="Founder credibility"
-        description={founderNote}
-        className="section-muted"
-      >
-        <div className="rounded-2xl border border-border/70 bg-white p-6 text-sm leading-relaxed text-slate-700">
-          Vector Systems was built to solve real operational pain for SMEs in Rwanda first, with long-term expansion into
-          deeper systems for technical operations and industry-specific workflows.
+      <SectionShell title="Founder credibility" description={founderNote} className="section-muted">
+        <div className="grid gap-8 md:grid-cols-[220px_minmax(0,560px)] md:items-start md:justify-center">
+          <div className="relative mx-auto size-36 overflow-hidden rounded-2xl md:mx-0 md:size-48">
+            <Image src="/founder.png" alt="Founder" fill sizes="(min-width: 768px) 192px, 144px" className="object-cover" />
+          </div>
+          <div className="rounded-2xl border border-border/70 bg-white p-6 text-sm leading-relaxed text-slate-700">
+            Vector Systems was built to solve real operational pain for SMEs in Rwanda first, with long-term expansion into
+            deeper systems for technical operations and industry-specific workflows.
+          </div>
         </div>
       </SectionShell>
 
@@ -68,4 +67,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
