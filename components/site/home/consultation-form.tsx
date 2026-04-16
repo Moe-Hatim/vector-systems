@@ -1,5 +1,6 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,31 +36,46 @@ export function ConsultationForm() {
     setSubmitting(true);
     setStatus({ type: "idle", message: "" });
 
-    try {
-      const response = await fetch("/api/consultation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus({
+        type: "error",
+        message:
+          "Form is not configured yet. Add EmailJS public environment variables in Vercel settings.",
       });
+      setSubmitting(false);
+      return;
+    }
 
-      const data = (await response.json()) as { message?: string };
-
-      if (!response.ok) {
-        throw new Error(data.message || "Submission failed. Please try again.");
-      }
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          full_name: form.fullName,
+          business_name: form.businessName,
+          email: form.email,
+          phone: form.phone,
+          team_size: form.teamSize || "Not provided",
+          challenge: form.challenge,
+        },
+        {
+          publicKey,
+        }
+      );
 
       setForm(initialForm);
       setStatus({
         type: "success",
         message: "Thanks. Your request was sent successfully. We will contact you shortly.",
       });
-    } catch (error) {
+    } catch {
       setStatus({
         type: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "We could not submit your request right now. Please try again.",
+        message: "We could not submit your request right now. Please try again.",
       });
     } finally {
       setSubmitting(false);
