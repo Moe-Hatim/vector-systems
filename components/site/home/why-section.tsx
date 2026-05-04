@@ -14,7 +14,7 @@ export function WhySection() {
             {whyVector.map((item, idx) => {
               const Icon = icons[idx];
               return (
-                <article key={item.title} className="flex gap-4">
+                <article key={item.title} className="interactive-lift reveal-fade flex gap-4 rounded-xl p-2">
                   <div className="mt-1 inline-flex size-11 shrink-0 items-center justify-center rounded-xl bg-[var(--surface-container)] text-primary">
                     <Icon className="size-5" />
                   </div>
@@ -27,7 +27,7 @@ export function WhySection() {
             })}
           </div>
 
-          <aside className="rounded-2xl bg-[var(--surface-container-low)] p-6">
+          <aside className="interactive-soft rounded-2xl bg-[var(--surface-container-low)] p-6">
             <p className="text-sm leading-relaxed italic text-[var(--on-surface-variant)]">&ldquo;{founderNote}&rdquo;</p>
             <div className="mt-4 flex items-center gap-3">
               <div className="relative size-11 overflow-hidden rounded-full">

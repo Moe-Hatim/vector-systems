@@ -4,7 +4,7 @@ export function FinalCtaSection() {
   return (
     <section id="book-consultation" className="section-shell bg-background">
       <div className="container-shell">
-        <div className="relative overflow-hidden rounded-2xl bg-[var(--primary-container)] px-6 py-12 text-primary-foreground md:px-16 md:py-20">
+        <div className="reveal-fade relative overflow-hidden rounded-2xl bg-[var(--primary-container)] px-6 py-12 text-primary-foreground md:px-16 md:py-20">
           <div className="relative z-10 mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tight md:text-5xl">Book a consultation</h2>

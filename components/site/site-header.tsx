@@ -36,15 +36,7 @@ export function SiteHeader() {
 
             <nav className="hidden items-center gap-7 md:flex">
               {nav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={
-                    isActive(item.href)
-                      ? "text-xs font-semibold uppercase tracking-[0.12em] text-secondary"
-                      : "text-xs font-medium uppercase tracking-[0.12em] text-slate-500 transition-colors hover:text-slate-900"
-                  }
-                >
+                <Link key={item.href} href={item.href} className={isActive(item.href) ? "nav-link nav-link-active" : "nav-link"}>
                   {item.label}
                 </Link>
               ))}

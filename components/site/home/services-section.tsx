@@ -15,7 +15,7 @@ export function ServicesSection() {
             description="We do not only diagnose the problem. We build the systems that fix it."
             className="max-w-2xl"
           />
-          <Link href="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-secondary transition-transform hover:translate-x-0.5">
+          <Link href="/services" className="interactive-lift inline-flex items-center gap-2 text-sm font-semibold text-secondary">
             View full service catalog
             <ArrowRight className="size-4" />
           </Link>
@@ -25,8 +25,8 @@ export function ServicesSection() {
           {services.map((service, idx) => {
             const Icon = icons[idx];
             return (
-              <article key={service.title} className="space-y-5">
-                <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+              <article key={service.title} className="interactive-soft reveal-fade space-y-5 rounded-2xl p-4">
+                <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform duration-300 hover:scale-105">
                   <Icon className="size-5" />
                 </div>
                 <h3 className="text-2xl font-semibold tracking-tight text-primary">{service.title}</h3>

@@ -16,13 +16,13 @@ export function HomeHeroSection() {
             to run with clarity.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg" className="btn-gradient h-11 rounded-2xl px-6">
+            <Button asChild size="lg" className="btn-gradient interactive-lift h-11 rounded-2xl px-6">
               <Link href={siteConfig.bookingUrl}>
                 Book a consultation
                 <ArrowRight className="size-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="h-11 rounded-2xl border-transparent bg-white px-6 text-slate-700 hover:bg-slate-100">
+            <Button asChild variant="outline" size="lg" className="interactive-lift h-11 rounded-2xl border-transparent bg-white px-6 text-slate-700 hover:bg-slate-100">
               <Link href="#how-it-works">See how it works</Link>
             </Button>
           </div>
@@ -39,7 +39,7 @@ export function HomeHeroSection() {
               priority
             />
           </div>
-          <aside className="metric-card absolute -bottom-6 left-3 w-56 p-5 sm:left-6">
+          <aside className="metric-card interactive-soft absolute -bottom-6 left-3 w-56 p-5 sm:left-6">
             <div className="mb-4 flex items-start justify-between">
               <BarChart3 className="size-6 text-secondary" />
               <span className="status-dot" aria-hidden />

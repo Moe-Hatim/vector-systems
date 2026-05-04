@@ -33,7 +33,7 @@ export function PageHero({
           <p className="max-w-2xl text-base leading-relaxed text-[var(--on-surface-variant)] md:text-xl">{description}</p>
           <div className="flex flex-wrap gap-3">
             {primaryLabel && primaryHref ? (
-              <Button asChild size="lg" className="h-11 rounded-full px-6">
+              <Button asChild size="lg" className="interactive-lift h-11 rounded-full px-6">
                 <Link href={primaryHref}>
                   {primaryLabel}
                   <ArrowRight className="size-4" />
@@ -41,7 +41,7 @@ export function PageHero({
               </Button>
             ) : null}
             {secondaryLabel && secondaryHref ? (
-              <Button asChild variant="outline" size="lg" className="h-11 rounded-full px-6">
+              <Button asChild variant="outline" size="lg" className="interactive-lift h-11 rounded-full px-6">
                 <Link href={secondaryHref}>{secondaryLabel}</Link>
               </Button>
             ) : null}
@@ -49,7 +49,7 @@ export function PageHero({
         </div>
 
         <div className="pointer-events-none hidden justify-end md:flex">
-          <Image src="/vector-logo.svg" alt="" aria-hidden width={260} height={260} className="opacity-10 lg:size-[280px]" />
+          <Image src="/vector-logo.svg" alt="" aria-hidden width={260} height={260} className="animate-enter-up-delayed opacity-10 lg:size-[280px]" />
         </div>
       </div>
     </section>
