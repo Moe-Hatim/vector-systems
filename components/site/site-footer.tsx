@@ -58,7 +58,12 @@ export function SiteFooter() {
           <p className="mb-4 text-sm text-[var(--on-surface-variant)]">{siteConfig.location}</p>
           <ul className="space-y-2 text-sm text-[var(--on-surface-variant)]">
             <li>
-              <a href="#" className="inline-flex items-center gap-2 hover:text-primary">
+              <a
+                href={siteConfig.linkedinUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 hover:text-primary"
+              >
                 <Link2 className="size-4" />
                 <span>LinkedIn</span>
               </a>

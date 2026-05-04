@@ -4,10 +4,11 @@
   description:
     "Vector Systems helps small businesses organize, track, and structure their operations so they stop losing time, money, and information.",
   location: "Kigali, Rwanda",
-  whatsappUrl: "https://wa.me/250700000000",
+  whatsappUrl: "https://wa.me/250793528787",
   bookingUrl: "/#book-consultation",
-  email: "hello@vectorsystems.rw",
-  phone: "+250 700 000 000",
+  email: "vectorsystems.rw@gmail.com",
+  phone: "+250793528787",
+  linkedinUrl: "https://www.linkedin.com/company/vector-systems-rwanda",
 };
 
 export const navItems = [
