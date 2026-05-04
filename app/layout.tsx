@@ -35,6 +35,20 @@ export const metadata: Metadata = {
     siteName: "Vector Systems",
     type: "website",
     locale: "en_RW",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Vector Systems",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vector Systems",
+    description: "We help businesses run properly.",
+    images: ["/opengraph-image"],
   },
 };
 
